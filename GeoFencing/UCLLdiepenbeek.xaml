@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18">
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18"> 
             <TextBlock Text="GeotrackerUCLL" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
             <TextBlock Text="Welkom op UCLL" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
         </StackPanel>
