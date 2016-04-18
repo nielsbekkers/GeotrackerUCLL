@@ -17,7 +17,7 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18"> 
-            <TextBlock Text="GeotrackerUCLL" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
+            <TextBlock Text="GeoTrackerUCLL" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
             <TextBlock Text="Welkom op UCLL" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
         </StackPanel>
 
@@ -37,15 +37,11 @@
             <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Dit is de pagina die je te zien krijgt indien je aanwezig bent op de UCLL in Diepenbeek " TextWrapping="Wrap"/>
 
             <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="" TextWrapping="Wrap"/>
-            <!--<ListView  Grid.Row="4" Grid.ColumnSpan="2" Name="ListItems">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <CheckBox Name="CheckBoxComplete" IsChecked="{Binding Complete, Mode=TwoWay}" Checked="CheckBoxComplete_Checked" Content="{Binding Text}" Margin="10,5" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
+            <ListView  Grid.Row="4" Grid.ColumnSpan="1" Name="ListItems">
+                <ListViewItem FontSize="20">Restaurant</ListViewItem>
+                <ListViewItem FontSize="20">Aula</ListViewItem>
+                <ListViewItem FontSize="20">Labo</ListViewItem>
+            </ListView>
         </Grid>
 
     </Grid>

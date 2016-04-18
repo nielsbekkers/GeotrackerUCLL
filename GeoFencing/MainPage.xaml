@@ -17,7 +17,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18">
-            <TextBlock Text="GeotrackerUCLL" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
+            <TextBlock Text="GeoTrackerUCLL" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
+            <Image Source="http://litc.be/wp-content/uploads/logo-UCll.png"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -35,7 +36,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Indien je binnenstapt op de UCLL Diepenbeek dan krijg je hiervan een melding, evenals bij het verlaten" TextWrapping="Wrap"/>
             
-            <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="" TextWrapping="Wrap"/>
+            <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Hierna word je doorverwezen naar een gedetailleerde pagina" TextWrapping="Wrap"/>
             <!--<ListView  Grid.Row="4" Grid.ColumnSpan="2" Name="ListItems">
                 <ListView.ItemTemplate>
                     <DataTemplate>

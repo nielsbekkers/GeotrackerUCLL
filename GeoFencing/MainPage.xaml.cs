@@ -54,20 +54,22 @@ namespace GeoFencing
 
                     if (report.NewState == GeofenceState.Entered)
                     {
+                        Frame.Navigate(typeof(UCLLdiepenbeek));
                         await Dispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
-                         {
-                             Frame.Navigate(typeof(UCLLdiepenbeek));
-                             MessageDialog dialog = new MessageDialog("Welkom op UCLL");
-                             await dialog.ShowAsync();
+                          {
+                             //MessageDialog dialog = new MessageDialog("Welkom op UCLL");
+                             //await dialog.ShowAsync();
+                             //Frame.Navigate(typeof(UCLLdiepenbeek));
                          });
                     }
                     if (report.NewState == GeofenceState.Exited)
                     {
+                        Frame.Navigate(typeof(MainPage));
                         await Dispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
                          {
-                             Frame.Navigate(typeof(MainPage));
-                             MessageDialog dialog = new MessageDialog("U verlaat UCLL!");
-                             await dialog.ShowAsync();
+                             //MessageDialog dialog = new MessageDialog("U verlaat UCLL!");
+                             //await dialog.ShowAsync();
+                             //Frame.Navigate(typeof(MainPage));
                          });
 
                     }
