@@ -1,4 +1,4 @@
-GeotrackerUCLL ==> Mobile App for Windows Phone 8.1
+<b>GeotrackerUCLL</b> ==> Mobile App for Windows Phone 8.1
 
 Applicatie voor het detecteren van je geolocatie, aan de hand van een voorgeprogrammeerde Latitude/Longtitude kan de app bepaalde acties uitvoeren
 
