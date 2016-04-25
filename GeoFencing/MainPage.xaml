@@ -46,6 +46,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>-->
+            <Button Grid.Row="3" Grid.ColumnSpan="1" Click="Button_Click">Locatie</Button>
         </Grid>
 
     </Grid>

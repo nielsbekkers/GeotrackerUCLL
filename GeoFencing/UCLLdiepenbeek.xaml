@@ -38,10 +38,24 @@
 
             <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="" TextWrapping="Wrap"/>
             <ListView  Grid.Row="4" Grid.ColumnSpan="1" Name="ListItems">
-                <ListViewItem FontSize="20">Restaurant</ListViewItem>
-                <ListViewItem FontSize="20">Aula</ListViewItem>
-                <ListViewItem FontSize="20">Labo</ListViewItem>
+                <ListViewItem>
+                    <Button Click="Button_Click">Restaurant</Button>
+                </ListViewItem>
+                <ListViewItem>
+                    <Button Click="Button_Click_1">Aula</Button>
+                </ListViewItem>
+                <ListViewItem>
+                    <Button Click="Button_Click_2">Labo</Button>
+                </ListViewItem>
+                <ListViewItem>
+                    <Button Click="Button_Click_3">Website</Button>
+                </ListViewItem>
+      
+                <ListViewItem>
+                    <Button Grid.Row="3" Grid.ColumnSpan="1" Click="Button_Click_4">Locatie</Button>
+                </ListViewItem>
             </ListView>
+            
         </Grid>
 
     </Grid>

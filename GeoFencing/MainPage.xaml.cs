@@ -14,6 +14,7 @@ namespace GeoFencing
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        Geolocator geolocator = new Geolocator();
         readonly GeofenceMonitor _monitor = GeofenceMonitor.Current;
 
         public MainPage()
@@ -23,19 +24,23 @@ namespace GeoFencing
             var dwellTimes = TimeSpan.FromMilliseconds(0.1);
             var mask = MonitoredGeofenceStates.Entered | MonitoredGeofenceStates.Exited;
 
-            _monitor.GeofenceStateChanged += MonitorOnGeofenceStateChanged;
+            
 
             var pos = new BasicGeoposition { Latitude = 50.929125, Longitude = 5.395189 };
 
             Geofence fence = new Geofence("UCLL", new Geocircle(pos, 100),mask,false,dwellTimes);
 
+            _monitor.GeofenceStateChanged += MonitorOnGeofenceStateChanged;
+
             try
             {
+                _monitor.Geofences.Clear();
                 _monitor.Geofences.Add(fence);
             }
             catch (Exception)
             {
                 //geofence already added to system 
+                
             }
         }
 
@@ -57,24 +62,30 @@ namespace GeoFencing
                         Frame.Navigate(typeof(UCLLdiepenbeek));
                         await Dispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
                           {
-                             //MessageDialog dialog = new MessageDialog("Welkom op UCLL");
-                             //await dialog.ShowAsync();
-                             //Frame.Navigate(typeof(UCLLdiepenbeek));
-                         });
+                              MessageDialog dialog = new MessageDialog("Welkom op UCLL");
+                              await dialog.ShowAsync();
+                              //Frame.Navigate(typeof(UCLLdiepenbeek));
+                          });
                     }
                     if (report.NewState == GeofenceState.Exited)
                     {
                         Frame.Navigate(typeof(MainPage));
                         await Dispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
                          {
-                             //MessageDialog dialog = new MessageDialog("U verlaat UCLL!");
-                             //await dialog.ShowAsync();
+                             MessageDialog dialog = new MessageDialog("U verlaat UCLL!");
+                             await dialog.ShowAsync();
                              //Frame.Navigate(typeof(MainPage));
                          });
 
                     }
                 }
             });
+        }
+
+        private async void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)//Locatie
+        {
+            Geoposition position = await geolocator.GetGeopositionAsync();  //Forceer het ophalen van de geolocaties om te simuleren in de emulator
+            
         }
     }
 }

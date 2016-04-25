@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
-using Windows.System;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -25,13 +23,12 @@ namespace GeoFencing
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class UCLLdiepenbeek : Page
+    public sealed partial class Restaurant : Page
     {
-        Geolocator geolocator = new Geolocator();
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-        public UCLLdiepenbeek()
+        public Restaurant()
         {
             this.InitializeComponent();
 
@@ -110,32 +107,5 @@ namespace GeoFencing
         }
 
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)//Restaurant
-        {
-            Frame.Navigate(typeof(Restaurant));
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)//Aula
-        {
-            Frame.Navigate(typeof(Aula));
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)//Labo
-        {
-            Frame.Navigate(typeof(Labo));
-        }
-
-        private async void Button_Click_3(object sender, RoutedEventArgs e)//Website
-        {
-            await Launcher.LaunchUriAsync(new Uri("https://www.ucll.be"));
-            
-        }
-
-        private async void Button_Click_4(object sender, RoutedEventArgs e)//Locatie
-        {
-            
-            Geoposition position = await geolocator.GetGeopositionAsync();      //Forceer het ophalen van de geolocaties om te simuleren in de emulator
-        }
     }
 }
