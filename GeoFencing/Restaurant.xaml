@@ -6,21 +6,55 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    DataContext="{Binding DefaultViewModel.Item, RelativeSource={RelativeSource Self}}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="Vorige" Icon="Back" Click="AppBarButton_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18">
-            <TextBlock Text="GeoTrackerUCLL" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
-            <TextBlock Text="Restaurant" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
-            <Image Source="https://s-media-cache-ak0.pinimg.com/236x/b6/90/43/b69043fd131da468c426e3cee27ee9d6.jpg"/>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,18,0,18">
+            <TextBlock Text="{Binding AppNaam}" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
+            <TextBlock Text="{Binding Titel}" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
         </StackPanel>
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}">In het restaurant van de UCLL in diepenbeek kan je terrecht voor warm eten, koude broodjes, koude gerechten,...
+        <LineBreak/><LineBreak/><Underline> Openingsuren: </Underline>
+        </TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Maandag:</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 09:00 - 15:00</TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Dinsdag:</TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 09:00 - 15:00</TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Woensdag:</TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 08:00 - 12:00</TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Donderdag:</TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 09:00 - 15:00</TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Vrijdag:</TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 09:00 - 15:00</TextBlock>
+        
 
         <!--TODO: Content should be placed within the following grid-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">

@@ -70,6 +70,10 @@ namespace GeoFencing
         /// session.  The state will be null the first time a page is visited.</param>
         private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            AppInfo appinfo = new AppInfo();
+            appinfo.AppNaam = "GeoTrackerUCLL";
+            appinfo.Titel = "Welkom op UCLL";
+            TitlePanel.DataContext = appinfo;
         }
 
         /// <summary>
@@ -136,6 +140,17 @@ namespace GeoFencing
         {
             
             Geoposition position = await geolocator.GetGeopositionAsync();      //Forceer het ophalen van de geolocaties om te simuleren in de emulator
+
+        }
+
+        //private void AppBarButton_Click(object sender, RoutedEventArgs e)//Vorige drukknop
+        //{
+        //    //Frame.Navigate(typeof(UCLLdiepenbeek));
+        //}
+
+        private async void Button_Click_5(object sender, RoutedEventArgs e)//plattegrond
+        {
+            await Launcher.LaunchUriAsync(new Uri("https://intranet.ucll.be/nl/system/files/users/17469/campusplan_diepenbeek_ucll_2016.pdf"));
         }
     }
 }

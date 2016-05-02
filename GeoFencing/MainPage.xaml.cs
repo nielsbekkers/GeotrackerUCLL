@@ -15,36 +15,40 @@ namespace GeoFencing
     public sealed partial class MainPage : Page
     {
         Geolocator geolocator = new Geolocator();
-        readonly GeofenceMonitor _monitor = GeofenceMonitor.Current;
+        readonly GeofenceMonitor _monitor = GeofenceMonitor.Current;                                //Maak klasse aan
 
-        public MainPage()
+        public MainPage()                                                                           //Constructor
         {
             InitializeComponent();
 
-            var dwellTimes = TimeSpan.FromMilliseconds(0.1);
-            var mask = MonitoredGeofenceStates.Entered | MonitoredGeofenceStates.Exited;
+            AppInfo appinfo = new AppInfo();                                                        //Binding appinfo
+            appinfo.AppNaam = "GeoTrackerUCLL";                                                     //Binding appinfo
+            TitlePanel.DataContext = appinfo;                                                       //Binding appinfo
 
-            
+            var dwellTimes = TimeSpan.FromMilliseconds(0.1);                                        //Verplicht aantal miliseconds dat men binnen de geolocatie moet zijn vooraleer code verder gaat
+            var mask = MonitoredGeofenceStates.Entered | MonitoredGeofenceStates.Exited;            //mask meegeven, binnen de zone of buiten de zone
 
-            var pos = new BasicGeoposition { Latitude = 50.929125, Longitude = 5.395189 };
+            geolocator.MovementThreshold = 10;
 
-            Geofence fence = new Geofence("UCLL", new Geocircle(pos, 100),mask,false,dwellTimes);
+            var pos = new BasicGeoposition { Latitude = 50.929125, Longitude = 5.395189 };          //Geef longitude en latitude van positie mee
 
-            _monitor.GeofenceStateChanged += MonitorOnGeofenceStateChanged;
+            Geofence fence = new Geofence("UCLL", new Geocircle(pos, 100),mask,false,dwellTimes);   //Maak nieuw geofence met behulp van de meegegeven variabelen
+
+            _monitor.GeofenceStateChanged += MonitorOnGeofenceStateChanged;                         //ga naar functie (MonitorOnGeofenceStateChanged)
 
             try
             {
-                _monitor.Geofences.Clear();
+                _monitor.Geofences.Clear();                                                         //Verwijder eerdere toegevoegde geofences 
                 _monitor.Geofences.Add(fence);
             }
             catch (Exception)
             {
-                //geofence already added to system 
+                //geofence is al aan het systeem toegevoegd 
                 
             }
         }
 
-        private async void MonitorOnGeofenceStateChanged(GeofenceMonitor sender, object args)
+        private async void MonitorOnGeofenceStateChanged(GeofenceMonitor sender, object args)           
         {
             var fences = sender.ReadReports();
             await Dispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
@@ -52,27 +56,27 @@ namespace GeoFencing
 
                 foreach (GeofenceStateChangeReport report in fences)
                 {
-                    if (report.Geofence.Id != "UCLL")
+                    if (report.Geofence.Id != "UCLL")                                                   //Indien Geofence ID gelijk is aan UCLL, voer code uit
 
                         continue;
 
 
                     if (report.NewState == GeofenceState.Entered)
                     {
-                        Frame.Navigate(typeof(UCLLdiepenbeek));
+                        Frame.Navigate(typeof(UCLLdiepenbeek));                                         //Navigeer naar de pagina UCLLdiepenbeek
                         await Dispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
                           {
-                              MessageDialog dialog = new MessageDialog("Welkom op UCLL");
+                              MessageDialog dialog = new MessageDialog("Welkom op UCLL Diepenbeek");    //Toon melding indien binnentreden van de geolocatie
                               await dialog.ShowAsync();
                               //Frame.Navigate(typeof(UCLLdiepenbeek));
                           });
                     }
                     if (report.NewState == GeofenceState.Exited)
                     {
-                        Frame.Navigate(typeof(MainPage));
+                        Frame.Navigate(typeof(MainPage));                                                //Navigeer naar de pagina UCLLdiepenbeek
                         await Dispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
                          {
-                             MessageDialog dialog = new MessageDialog("U verlaat UCLL!");
+                             MessageDialog dialog = new MessageDialog("U verlaat UCLL Diepenbeek!");    //Toon melding iendien verlaten van de geolocatie
                              await dialog.ShowAsync();
                              //Frame.Navigate(typeof(MainPage));
                          });
@@ -82,10 +86,10 @@ namespace GeoFencing
             });
         }
 
-        private async void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)//Locatie
+       
+        private async void AppBarButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Geoposition position = await geolocator.GetGeopositionAsync();  //Forceer het ophalen van de geolocaties om te simuleren in de emulator
-            
+            Geoposition position = await geolocator.GetGeopositionAsync();                               //Forceer het ophalen van de geolocaties om te simuleren in de emulator
         }
     }
 }

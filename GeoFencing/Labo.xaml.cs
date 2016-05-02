@@ -67,6 +67,10 @@ namespace GeoFencing
         /// session.  The state will be null the first time a page is visited.</param>
         private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            AppInfo appinfo = new AppInfo();
+            appinfo.AppNaam = "GeoTrackerUCLL";
+            appinfo.Titel = "Labo";
+            TitlePanel.DataContext = appinfo;
         }
 
         /// <summary>
@@ -107,5 +111,10 @@ namespace GeoFencing
         }
 
         #endregion
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)//Vorige Knop
+        {
+            Frame.Navigate(typeof(UCLLdiepenbeek));
+        }
     }
 }

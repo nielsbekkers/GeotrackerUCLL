@@ -6,8 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    DataContext="{Binding DefaultViewModel.Item, RelativeSource={RelativeSource Self}}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="Plattegrond" Icon="Map" Click="Button_Click_5"/>
+                <AppBarButton Label="Refresh" Icon="Refresh" Click="Button_Click_4"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -17,8 +27,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18"> 
-            <TextBlock Text="GeoTrackerUCLL" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
-            <TextBlock Text="Welkom op UCLL" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
+            <TextBlock Text="{Binding AppNaam}" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
+            <TextBlock Text="{Binding Titel}" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -50,10 +60,8 @@
                 <ListViewItem>
                     <Button Click="Button_Click_3">Website</Button>
                 </ListViewItem>
-      
-                <ListViewItem>
-                    <Button Grid.Row="3" Grid.ColumnSpan="1" Click="Button_Click_4">Locatie</Button>
-                </ListViewItem>
+
+                
             </ListView>
             
         </Grid>

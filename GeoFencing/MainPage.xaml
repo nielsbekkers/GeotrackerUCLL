@@ -5,11 +5,19 @@
     xmlns:local="using:GeoFencing"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding DefaultViewModel.Item, RelativeSource={RelativeSource Self}}"
     mc:Ignorable="d">
 
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="Refresh" Icon="Refresh" Click="AppBarButton_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
     
-        <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <!--LayoutRoot is the root grid where all page content is placed-->
+        <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -17,7 +25,7 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18">
-            <TextBlock Text="GeoTrackerUCLL" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
+            <TextBlock Text="{Binding AppNaam}" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
             <Image Source="http://litc.be/wp-content/uploads/logo-UCll.png"/>
         </StackPanel>
 
@@ -35,8 +43,8 @@
                 <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Indien je binnenstapt op de UCLL Diepenbeek dan krijg je hiervan een melding, evenals bij het verlaten" TextWrapping="Wrap"/>
-            
-            <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Hierna word je doorverwezen naar een gedetailleerde pagina" TextWrapping="Wrap"/>
+            <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Hierna kan je gebruikmaken van een gedetailleerde pagina met de gewenste informatie over de UCLL" TextWrapping="Wrap"/>
+            <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}">Indien de geolocatie niet klopt, Druk op de refresh knop hieronder</TextBlock>
             <!--<ListView  Grid.Row="4" Grid.ColumnSpan="2" Name="ListItems">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -46,7 +54,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>-->
-            <Button Grid.Row="3" Grid.ColumnSpan="1" Click="Button_Click">Locatie</Button>
+           
         </Grid>
 
     </Grid>

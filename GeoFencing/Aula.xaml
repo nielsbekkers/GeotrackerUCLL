@@ -6,20 +6,35 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    DataContext="{Binding DefaultViewModel.Item, RelativeSource={RelativeSource Self}}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="Vorige" Icon="Back" Click="AppBarButton_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18">
-            <TextBlock Text="GeoTrackerUCLL" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
-            <TextBlock Text="Aula" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
+            <TextBlock Text="{Binding AppNaam}" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
+            <TextBlock Text="{Binding Titel}" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
         </StackPanel>
+        <TextBlock Grid.Row="3" Style="{StaticResource BodyTextBlockStyle}">Er bevinden zich <Underline>5 Aula's</Underline> in de UCLL
+        <LineBreak/><LineBreak/> B109 => B-Blok (Technologie)<LineBreak/><LineBreak/> J101 => Blauwe Aula
+        <LineBreak/><LineBreak/> J102 => Rode Aula<LineBreak/><LineBreak/> L001 => L-Blok (Orthopedagogie)
+        <LineBreak/><LineBreak/> L101 => L-Blok (Orthopedagogie)
+        </TextBlock>
 
         <!--TODO: Content should be placed within the following grid-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
