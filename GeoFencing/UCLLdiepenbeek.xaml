@@ -45,7 +45,6 @@
                 <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Dit is de pagina die je te zien krijgt indien je aanwezig bent op de UCLL in Diepenbeek " TextWrapping="Wrap"/>
-
             <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="" TextWrapping="Wrap"/>
             <ListView  Grid.Row="4" Grid.ColumnSpan="1" Name="ListItems">
                 <ListViewItem>
@@ -60,10 +59,7 @@
                 <ListViewItem>
                     <Button Click="Button_Click_3">Website</Button>
                 </ListViewItem>
-
-                
             </ListView>
-            
         </Grid>
 
     </Grid>

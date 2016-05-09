@@ -45,17 +45,6 @@
             <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Indien je binnenstapt op de UCLL Diepenbeek dan krijg je hiervan een melding, evenals bij het verlaten" TextWrapping="Wrap"/>
             <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="Hierna kan je gebruikmaken van een gedetailleerde pagina met de gewenste informatie over de UCLL" TextWrapping="Wrap"/>
             <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}">Indien de geolocatie niet klopt, Druk op de refresh knop hieronder</TextBlock>
-            <!--<ListView  Grid.Row="4" Grid.ColumnSpan="2" Name="ListItems">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <CheckBox Name="CheckBoxComplete" IsChecked="{Binding Complete, Mode=TwoWay}" Checked="CheckBoxComplete_Checked" Content="{Binding Text}" Margin="10,5" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
-           
         </Grid>
-
     </Grid>
 </Page>

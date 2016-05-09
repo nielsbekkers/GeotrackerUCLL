@@ -30,9 +30,9 @@ namespace GeoFencing
 
             geolocator.MovementThreshold = 10;
 
-            var pos = new BasicGeoposition { Latitude = 50.929125, Longitude = 5.395189 };          //Geef longitude en latitude van positie mee
+            var pos = new BasicGeoposition { Latitude = 50.929125, Longitude = 5.395189 };          //Geef longitude en latitude van positie mee (Zone UCLL in diepenbeek)
 
-            Geofence fence = new Geofence("UCLL", new Geocircle(pos, 100),mask,false,dwellTimes);   //Maak nieuw geofence met behulp van de meegegeven variabelen
+            Geofence fence = new Geofence("UCLL", new Geocircle(pos, 100),mask,false,dwellTimes);   //Maak nieuwe geofence met behulp van de meegegeven variabelen
 
             _monitor.GeofenceStateChanged += MonitorOnGeofenceStateChanged;                         //ga naar functie (MonitorOnGeofenceStateChanged)
 
@@ -73,10 +73,10 @@ namespace GeoFencing
                     }
                     if (report.NewState == GeofenceState.Exited)
                     {
-                        Frame.Navigate(typeof(MainPage));                                                //Navigeer naar de pagina UCLLdiepenbeek
+                        Frame.Navigate(typeof(MainPage));                                                //Navigeer naar de pagina MainPage
                         await Dispatcher.RunAsync(CoreDispatcherPriority.High, async () =>
                          {
-                             MessageDialog dialog = new MessageDialog("U verlaat UCLL Diepenbeek!");    //Toon melding iendien verlaten van de geolocatie
+                             MessageDialog dialog = new MessageDialog("U verlaat UCLL Diepenbeek!");    //Toon melding indien verlaten van de geolocatie
                              await dialog.ShowAsync();
                              //Frame.Navigate(typeof(MainPage));
                          });

@@ -143,11 +143,6 @@ namespace GeoFencing
 
         }
 
-        //private void AppBarButton_Click(object sender, RoutedEventArgs e)//Vorige drukknop
-        //{
-        //    //Frame.Navigate(typeof(UCLLdiepenbeek));
-        //}
-
         private async void Button_Click_5(object sender, RoutedEventArgs e)//plattegrond
         {
             await Launcher.LaunchUriAsync(new Uri("https://intranet.ucll.be/nl/system/files/users/17469/campusplan_diepenbeek_ucll_2016.pdf"));
