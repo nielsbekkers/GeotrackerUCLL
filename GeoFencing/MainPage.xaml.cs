@@ -25,14 +25,14 @@ namespace GeoFencing
             appinfo.AppNaam = "GeoTrackerUCLL";                                                     //Binding appinfo
             TitlePanel.DataContext = appinfo;                                                       //Binding appinfo
 
-            var dwellTimes = TimeSpan.FromMilliseconds(0.1);                                        //Verplicht aantal miliseconds dat men binnen de geolocatie moet zijn vooraleer code verder gaat
+            var dwellTimes = TimeSpan.FromSeconds(2);                                               //Verplicht aantal miliseconds dat men binnen de geolocatie moet zijn vooraleer code verder gaat
             var mask = MonitoredGeofenceStates.Entered | MonitoredGeofenceStates.Exited;            //mask meegeven, binnen de zone of buiten de zone
 
             geolocator.MovementThreshold = 10;
 
-            var pos = new BasicGeoposition { Latitude = 50.929125, Longitude = 5.395189 };          //Geef longitude en latitude van positie mee (Zone UCLL in diepenbeek)
+            var pos = new BasicGeoposition { Latitude = 50.929125, Longitude = 5.395183 };          //Geef longitude en latitude van positie mee (Zone UCLL in diepenbeek)
 
-            Geofence fence = new Geofence("UCLL", new Geocircle(pos, 100),mask,false,dwellTimes);   //Maak nieuwe geofence met behulp van de meegegeven variabelen
+            Geofence fence = new Geofence("UCLL", new Geocircle(pos, 50),mask,false,dwellTimes);   //Maak nieuwe geofence met behulp van de meegegeven variabelen
 
             _monitor.GeofenceStateChanged += MonitorOnGeofenceStateChanged;                         //ga naar functie (MonitorOnGeofenceStateChanged)
 

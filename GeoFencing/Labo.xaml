@@ -16,7 +16,7 @@
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
-    
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -30,13 +30,13 @@
             <TextBlock Text="{Binding AppNaam}" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
             <TextBlock Text="{Binding Titel}" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
         </StackPanel>
-        <TextBlock Grid.Row="3" Style="{StaticResource BodyTextBlockStyle}">De labo's van de UCLL:
+        <TextBlock Grid.Row="1" Style="{StaticResource BodyTextBlockStyle}" Margin="10,9,0,0" Grid.RowSpan="2">De labo's van de UCLL:
         <LineBreak/><LineBreak/> B-Blok (Departement Technologie)
         <LineBreak/><LineBreak/> K-Blok (Departement Technologie)</TextBlock>
 
         <!--TODO: Content should be placed within the following grid-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
-            
+
         </Grid>
     </Grid>
 </Page>

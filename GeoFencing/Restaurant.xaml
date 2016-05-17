@@ -16,7 +16,7 @@
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
-    
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -41,20 +41,20 @@
             <TextBlock Text="{Binding AppNaam}" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
             <TextBlock Text="{Binding Titel}" Style="{StaticResource SubheaderTextBlockStyle}" Margin="18"/>
         </StackPanel>
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}">In het restaurant van de UCLL in diepenbeek kan je terrecht voor warm eten, koude broodjes, koude gerechten,...
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Margin="10,9,0,0" Grid.RowSpan="3">In het restaurant van de UCLL in diepenbeek kan je terrecht voor warm eten, koude broodjes, koude gerechten,...
         <LineBreak/><LineBreak/><Underline> Openingsuren: </Underline>
         </TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Maandag:</TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 09:00 - 15:00</TextBlock>
-        <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Dinsdag:</TextBlock>
-        <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 09:00 - 15:00</TextBlock>
-        <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Woensdag:</TextBlock>
-        <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 08:00 - 12:00</TextBlock>
-        <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Donderdag:</TextBlock>
-        <TextBlock Grid.Row="7" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 09:00 - 15:00</TextBlock>
-        <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"> Vrijdag:</TextBlock>
-        <TextBlock Grid.Row="8" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"> 09:00 - 15:00</TextBlock>
-        
+        <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,0.167" HorizontalAlignment="Right" Width="90"> Maandag:</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Margin="5,0.5,0,23.833" Grid.RowSpan="2"> 09:00 - 15:00</TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,0.167" HorizontalAlignment="Right" Width="90"> Dinsdag:</TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Margin="5,0.5,0,23.833" Grid.RowSpan="2"> 09:00 - 15:00</TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,0.167" HorizontalAlignment="Right" Width="90"> Woensdag:</TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Margin="5,0.5,0,23.833" Grid.RowSpan="2"> 08:00 - 12:00</TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,0.167" HorizontalAlignment="Right" Width="90"> Donderdag:</TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Margin="5,0.5,0,23.833" Grid.RowSpan="2"> 09:00 - 15:00</TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,0.167" HorizontalAlignment="Right" Width="90"> Vrijdag:</TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Margin="5,0.5,0,23.833" Grid.RowSpan="2"> 09:00 - 15:00</TextBlock>
+
 
         <!--TODO: Content should be placed within the following grid-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
